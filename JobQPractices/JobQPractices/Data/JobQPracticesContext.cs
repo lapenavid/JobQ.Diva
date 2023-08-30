@@ -23,14 +23,14 @@ namespace JobQPractices.Data
         private jobDetails[] GetJobDetails() => new jobDetails[] {
             new jobDetails
             {
-                Id = "1",
+                
                 Description = "first job",
                 JobStatus = JobStatus.New,
                 FinishDate = DateTime.Now
             },
             new jobDetails
             {
-                Id = "2",
+               
                 Description = "second job",
                 JobStatus = JobStatus.Queued,
                 FinishDate = DateTime.Now

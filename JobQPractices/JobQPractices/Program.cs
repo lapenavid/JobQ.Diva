@@ -13,6 +13,10 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+IDataServices dataServices = new DataService();
+DataHandler handler = new DataHandler(dataServices);
+handler.sendData("message");
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

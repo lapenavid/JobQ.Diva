@@ -18,7 +18,7 @@ public static class jobDetailsEndpoints
         .WithName("GetAlljobDetails")
         .WithOpenApi();
 
-        group.MapGet("/{id}", async Task<Results<Ok<jobDetails>, NotFound>> (string id, JobQPracticesContext db) =>
+        group.MapGet("/{id}", async Task<Results<Ok<jobDetails>, NotFound>> (Guid id, JobQPracticesContext db) =>
         {
             return await db.jobDetails.AsNoTracking()
                 .FirstOrDefaultAsync(model => model.Id == id)
@@ -29,7 +29,7 @@ public static class jobDetailsEndpoints
         .WithName("GetjobDetailsById")
         .WithOpenApi();
 
-        group.MapPut("/{id}", async Task<Results<Ok, NotFound>> (string id, jobDetails jobDetails, JobQPracticesContext db) =>
+        group.MapPut("/{id}", async Task<Results<Ok, NotFound>> (Guid id, jobDetails jobDetails, JobQPracticesContext db) =>
         {
             var affected = await db.jobDetails
                 .Where(model => model.Id == id)
@@ -53,7 +53,7 @@ public static class jobDetailsEndpoints
         .WithName("CreatejobDetails")
         .WithOpenApi();
 
-        group.MapDelete("/{id}", async Task<Results<Ok, NotFound>> (string id, JobQPracticesContext db) =>
+        group.MapDelete("/{id}", async Task<Results<Ok, NotFound>> (Guid id, JobQPracticesContext db) =>
         {
             var affected = await db.jobDetails
                 .Where(model => model.Id == id)
