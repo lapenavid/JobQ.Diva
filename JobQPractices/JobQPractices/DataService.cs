@@ -1,11 +1,10 @@
 ﻿namespace JobQPractices
 {
-    public class DataService : IDataServices
+    public class DataService 
     {
-        public void SendData(string message)
+        public void SimulationNames()
         {
-            Console.WriteLine("Testdata");
-            Console.WriteLine("test");
+           
         }
     }
 }
