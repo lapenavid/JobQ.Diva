@@ -1,10 +1,14 @@
-﻿namespace JobQPractices
+﻿using JobQPractices.Data.ApsimData;
+
+namespace JobQPractices
 {
     public class DataService 
     {
-        public void SimulationNames()
+        //private readonly DapperContext _context;
+
+        public DataService()
         {
-           
+          // _context = context;
         }
     }
 }
